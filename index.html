@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f0c1e">
+  <title>Rock · Paper · Scissors</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div class="eyebrow">THE CLASSIC SHOWDOWN</div>
+      <h1>Rock <span>·</span> Paper <span>·</span> Scissors</h1>
+      <p class="subtitle">Make your move. Beat the computer.</p>
+    </header>
+
+    <section class="scoreboard" aria-label="Current score">
+      <div class="score-side player-score">
+        <span class="score-label">YOU</span>
+        <strong id="playerScore" aria-live="polite">0</strong>
+      </div>
+      <div class="score-divider">—</div>
+      <div class="score-side cpu-score">
+        <span class="score-label">CPU</span>
+        <strong id="cpuScore" aria-live="polite">0</strong>
+      </div>
+    </section>
+
+    <section class="arena" aria-label="Round arena">
+      <article class="arena-card player-card">
+        <div class="arena-label">YOU</div>
+        <div class="hand-stage" id="playerStage">
+          <div class="hand-placeholder" id="playerPlaceholder">Choose your hand</div>
+          <img class="hand-image" id="playerHand" alt="" hidden>
+        </div>
+        <div class="choice-caption" id="playerChoice">Waiting...</div>
+      </article>
+
+      <div class="versus" aria-hidden="true">VS</div>
+
+      <article class="arena-card cpu-card">
+        <div class="arena-label">CPU</div>
+        <div class="hand-stage" id="cpuStage">
+          <div class="cpu-question" id="cpuQuestion">?</div>
+          <img class="hand-image" id="cpuHand" alt="" hidden>
+        </div>
+        <div class="choice-caption" id="cpuChoice">Ready?</div>
+      </article>
+    </section>
+
+    <div class="status-area" aria-live="polite" aria-atomic="true">
+      <div id="statusTitle" class="status-title">Choose your hand to begin!</div>
+      <div id="statusDetail" class="status-detail">Rock beats Scissors · Scissors beats Paper · Paper beats Rock</div>
+    </div>
+
+    <section class="choices" aria-label="Choose your move">
+      <button class="choice-button" data-choice="rock" type="button">
+        <img src="assets/hands/rock.svg" alt="" class="button-hand">
+        <span>Rock</span>
+      </button>
+      <button class="choice-button" data-choice="paper" type="button">
+        <img src="assets/hands/paper.svg" alt="" class="button-hand">
+        <span>Paper</span>
+      </button>
+      <button class="choice-button" data-choice="scissors" type="button">
+        <img src="assets/hands/scissors.svg" alt="" class="button-hand">
+        <span>Scissors</span>
+      </button>
+    </section>
+
+    <footer class="game-footer">
+      <span>Choose a move to play again after each round.</span>
+      <button id="resetButton" class="reset-button" type="button">↺ Reset score</button>
+    </footer>
+  </main>
+  <script src="js/game.js"></script>
+</body>
+</html>
